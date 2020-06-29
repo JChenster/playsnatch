@@ -9,3 +9,5 @@ How to Use:
 - When a tile is flipped, enter that letter. If a typo is made use the d command. For example, if r is unintentionally typed, to delete it from the flipped tiles, type `d r`
 
 - When a word is snatched/stolen, enter that word
+
+- `end` to end the game
