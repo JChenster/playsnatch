@@ -62,22 +62,21 @@ def play(word):
 # run time is garbo
 def findStealDeep():
     ans = []
-    if x % 10 == 0:
-        for p in played:
-            # get letters of played words in list
-            l = []
-            for letter in p:
-                l.append(letter)
-            # check if any words can be made by stealing said word
-            for w in words:
-                if len(w) <= len(p):
-                    continue
-                for i in range(1, len(cur)+1):
-                    c = list(combinations(cur, i))
-                    for t in c:
-                        temp = l + list(t)
-                        if len(w) == len(temp) and isPossible(w, temp) and p != w[:len(p)]:
-                            ans.append(w)
+    for p in played:
+        # get letters of played words in list
+        l = []
+        for letter in p:
+            l.append(letter)
+        # check if any words can be made by stealing said word
+        for w in words:
+            if len(w) <= len(p):
+                continue
+            for i in range(1, len(cur)+1):
+                c = list(combinations(cur, i))
+                for t in c:
+                    temp = l + list(t)
+                    if len(w) == len(temp) and isPossible(w, temp) and p != w[:len(p)]:
+                        ans.append(w)
     if len(ans) > 0:
         print("[*] STEAL:"," ".join(ans))
 
